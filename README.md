@@ -86,3 +86,13 @@ cd /src/scripts
 ```
 
 ---
+
+To-Do:
+
+- add poetry for dep management (dev deps and prod deps)
+- add for each http method a example endpoint
+- add for each endpoint an unit test
+- add app/scripts to global scripts
+- add postman collection
+- refactor linting and formatting
+- add branch with auth/api_key
