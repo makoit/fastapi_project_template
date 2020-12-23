@@ -1,8 +1,10 @@
 # fastapi_project_template
 
-Base template for fastapi projects
+Base template for fastapi projects. Templates includes example endpoints, schemas & unit tests.
 
 ## project structure
+
+Optional folders can be deleted if not required.
 
 - scripts (includes useful shell scripts)
 - src
@@ -15,7 +17,7 @@ Base template for fastapi projects
     - schemas (This module includes pydantic schemas to define the properties and types to validate some payload)
     - tests
       - api (includes the api endpoint tests)
-      - db [optinal] (includes the database specific tests)
+      - db [optional] (includes the database specific tests)
       - postman (includes postman collection)
       - utils (includes tests for utils)
     - utils (This module include util functionality.)
