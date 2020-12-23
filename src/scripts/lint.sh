@@ -1,11 +1,12 @@
+#!/usr/bin/env bash
 
 set -x
 
 #static type checking
-mypy app
+mypy ../app
 #code formatter
-black app --check
+black ../app --check
 #sort imports alphabetically
-isort --check-only app
+isort --check-only ../app
 #flake linter
-flake8 app
+flake8 ../app

@@ -31,24 +31,22 @@ Base template for fastapi projects
 
 Deployment is actually based on docker-compose for local dev. Execute the commands on the same folder level where the docker-compose file is located.
 
-### start app and mongo:
-
-(run first time container are build, next time run this command container will not be build)
+### build docker image:
 
 ```sh
-docker-compose up
+scripts/build.sh
 ```
 
-### rebuild container:
+### run app in container
 
 ```sh
-docker-compose build --no-cache
+scripts/run.sh
 ```
 
-### run after rebuild:
+### build, run app in container & run unit tests
 
 ```sh
-docker-compose down && docker-compose up
+scripts/test.sh
 ```
 
 ---
@@ -88,13 +86,3 @@ cd /src/scripts
 ```
 
 ---
-
-## testing code
-
-```sh
-cd /src/scripts
-```
-
-```sh
-./test.sh
-```
