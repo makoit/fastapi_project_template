@@ -1,9 +1,10 @@
 import uuid
 from typing import List
 
-from app import schemas
 from fastapi import APIRouter, status  # , HTTPException
 from fastapi.responses import JSONResponse
+
+from app import schemas
 
 router = APIRouter()
 
@@ -146,7 +147,7 @@ def create_user(new_user: schemas.UserBase):
     "/{id}",
     response_model=schemas.UserInDBBase,
     status_code=status.HTTP_200_OK,
-        responses={
+    responses={
         404: {"model": schemas.ResponseMessage, "description": "User not found"},
         200: {
             "description": "User updated",
@@ -171,7 +172,7 @@ async def update_user(id: str, user: schemas.UserBase):
         is_active=user.is_active,
         is_superuser=user.is_superuser,
         full_name=user.full_name,
-        id=id
+        id=id,
     )
 
     find_user = [user for user in fake_users if user.id == id][0]
@@ -183,14 +184,12 @@ async def update_user(id: str, user: schemas.UserBase):
         return user_update
 
 
-
-
 # delete user by specific id
 @router.delete(
     "/{id}",
     response_model=schemas.UserInDBBase,
     status_code=status.HTTP_200_OK,
-        responses={
+    responses={
         404: {"model": schemas.ResponseMessage, "description": "User not found"},
         200: {
             "description": "User deleted",

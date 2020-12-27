@@ -1,0 +1,18 @@
+#base image
+FROM python:3.8-slim
+
+#set workdir
+WORKDIR /app
+
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# copy requirements file
+COPY ./requirements.txt /app/requirements.txt
+
+#install libraries dependencies to container
+RUN pip install -r requirements.txt
+
+#add app folder inside container
+COPY . /app

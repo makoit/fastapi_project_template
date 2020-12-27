@@ -1,10 +1,7 @@
 from fastapi.testclient import TestClient
 
-
-from app.core.config import settings
 from app.api.v1.endpoints.users_example import fake_users
-
-
+from app.core.config import settings
 
 
 def test_read_all_users(client: TestClient) -> None:
@@ -29,9 +26,7 @@ def test_read_user_by_id(client: TestClient) -> None:
 
 def test_create_new_user(client: TestClient) -> None:
 
-    user = {"is_active": True,
-            "is_superuser": True,
-            "full_name": "Max Musterfrau"}
+    user = {"is_active": True, "is_superuser": True, "full_name": "Max Musterfrau"}
 
     r = client.post(f"{settings.API_V1_STR}/users/", json=user)
     assert 200 <= r.status_code < 300
@@ -40,9 +35,3 @@ def test_create_new_user(client: TestClient) -> None:
     assert new_user["is_active"] == user["is_active"]
     assert new_user["is_superuser"] == user["is_superuser"]
     assert new_user["full_name"] == user["full_name"]
-
-
-
-
-
-
