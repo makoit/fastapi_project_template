@@ -180,7 +180,9 @@ async def update_user(id: str, user: schemas.UserBase):
     if not find_user:
         return JSONResponse(status_code=404, content={"details": "User not found"})
     else:
-        fake_users[:] = [user_update for user in fake_users if user.id == id]
+        for i, user in enumerate(fake_users):
+            if user.id == find_user.id:
+                fake_users[i] = user_update
         return user_update
 
 

@@ -119,6 +119,6 @@ cd /src/scripts
 
 - [x] add poetry for deps management (dev deps and prod deps)
 - [ ] add postman collection
-- [ ] refactor linting and formatting
+- [ ] refactoring linting and formatting
 - [ ] add branch with auth/api_key
-- [ ] add branch for kubernetes deployment
+- [ ] add branch for deploy/kubernetes
