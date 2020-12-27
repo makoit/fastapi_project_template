@@ -4,7 +4,8 @@ Base template for fastapi projects. Templates includes example endpoints, schema
 
 ## project structure
 
-Optional folders can be deleted if not required.
+- optional folders can be deleted if not required
+- in the main folder can be found config example & docker-compose file for local dev deployment
 
 ```
 ├───scripts (includes useful shell scripts)
@@ -37,7 +38,7 @@ Optional folders can be deleted if not required.
 
 ## run app local for dev
 
-Deployment is actually based on docker-compose for local dev. Execute the commands on the same folder level where the docker-compose file is located.
+deployment is actually based on docker-compose for local dev. Execute the commands on the same folder level where the docker-compose file is located.
 
 ### build docker image:
 
@@ -114,9 +115,10 @@ cd /src/scripts
 
 ---
 
-To-Do List:
+## To-Do List:
 
 - [ ] add poetry for deps management (dev deps and prod deps)
 - [ ] add postman collection
 - [ ] refactor linting and formatting
 - [ ] add branch with auth/api_key
+- [ ] add branch for kubernetes deployment
