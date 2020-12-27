@@ -6,47 +6,28 @@ Base template for fastapi projects. Templates includes example endpoints, schema
 
 Optional folders can be deleted if not required.
 
-- scripts (includes useful shell scripts)
-- src
-  - app (includes python code)
-    - api (This module includes the api endpoints)
-      - api_v1 (includes the version 1 of the api)
-    - core (This module includes core functionalities for the app)
-    - db [optional] (This module includes database access)
-    - models [optional] (This module includes the internal api data models e.g. database data models for sql or no-sql databases)
-    - schemas (This module includes pydantic schemas to define the properties and types to validate some payload)
-    - tests
-      - api (includes the api endpoint tests)
-      - db [optional] (includes the database specific tests)
-      - postman (includes postman collection)
-      - utils (includes tests for utils)
-    - utils (This module include util functionality.)
-  - scripts (includes useful shell scripts)
-
-├───scripts
+```
+├───scripts (includes useful shell scripts)
 └───src
-├───app
-│ ├───api
-│ │ └───v1
-│ │ └───endpoints
-│ ├───core
-│ ├───db
-│ │ ├───crud
-│ │ └───init
-│ ├───models
-│ ├───schemas
-│ ├───tests
-│ │ ├───.pytest_cache
-│ │ │ └───v
-│ │ │ └───cache
-│ │ ├───api
-│ │ │ └───v1
-│ │ ├───db
-│ │ ├───postman
-│ │ └───utils
-│ └───utils
-├───htmlcov
-└───scripts
+    ├───app (python code)
+    │   ├───api (api endpoints)
+    │   │   └───v1 (version 1 of the api)
+    │   │       └───endpoints
+    │   ├───core (core functionalities and configs)
+    │   ├───db (optional: db access if required)
+    │   │   ├───crud
+    │   │   └───init
+    │   ├───models (internal api data models if required)
+    │   ├───schemas (pydantic schemas for api payload)
+    │   ├───tests (unit tests)
+    │   │   ├───api (api endpoint tests)
+    │   │   │   └───v1
+    │   │   ├───db (optional: database specific tests)
+    │   │   ├───postman (postman test collection)
+    │   │   └───utils (test utils)
+    │   └───utils (util functionality for app)
+    └───scripts (useful shell scripts)
+```
 
 ## app config
 
