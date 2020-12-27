@@ -51,6 +51,8 @@ scripts/run.sh
 scripts/test.sh
 ```
 
+info: html based test coverage report will be saved after run in `src/app/htmlcov`
+
 ---
 
 ## api documentation
@@ -60,6 +62,15 @@ scripts/test.sh
 ---
 
 ## lint code
+
+for code linting following deps are required:
+
+- [mypy](https://mypy.readthedocs.io/en/stable/introduction.html)
+- [black](https://pypi.org/project/black/)
+- [isort](https://pypi.org/project/isort/)
+- [flake8](https://pypi.org/project/flake8/)
+
+(install them globally or in a local python env)
 
 navigate to folder
 
@@ -77,6 +88,14 @@ lint your code
 
 ## format code
 
+for code formatting following deps are required:
+
+- [autoflake](https://pypi.org/project/autoflake/)
+- [black](https://pypi.org/project/black/)
+- [isort](https://pypi.org/project/isort/)
+
+(install them globally or in a local python env)
+
 navigate to folder
 
 ```sh
@@ -89,13 +108,9 @@ cd /src/scripts
 
 ---
 
-To-Do:
+To-Do List:
 
-- add poetry for dep management (dev deps and prod deps)
-- add for each http method a example endpoint
-- add for each endpoint an unit test
-- add app/scripts to global scripts
-- add postman collection
-- refactor linting and formatting
-- add branch with auth/api_key
-- pip install python-dotenv -> for env configs
+- [ ] add poetry for deps management (dev deps and prod deps)
+- [ ] add postman collection
+- [ ] refactor linting and formatting
+- [ ] add branch with auth/api_key
