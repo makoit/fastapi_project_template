@@ -23,6 +23,7 @@ fake_users = [
 ]
 
 
+# read all users endpoint
 @router.get(
     "/",
     response_model=List[schemas.UserInDBBase],
@@ -68,6 +69,7 @@ def read_users():
     return users
 
 
+# read a user by specific id
 @router.get(
     "/{id}",
     response_model=schemas.UserInDBBase,
@@ -102,6 +104,7 @@ async def read_user_by_id(id: str):
     return user
 
 
+# create a new user
 @router.post(
     "/",
     response_model=schemas.UserInDBBase,
@@ -138,6 +141,7 @@ def create_user(new_user: schemas.UserBase):
     return new_user
 
 
+# update a user by specific id
 @router.put(
     "/{id}",
     response_model=schemas.UserInDBBase,
@@ -181,7 +185,7 @@ async def update_user(id: str, user: schemas.UserBase):
 
 
 
-
+# delete user by specific id
 @router.delete(
     "/{id}",
     response_model=schemas.UserInDBBase,

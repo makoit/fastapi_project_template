@@ -8,3 +8,4 @@ docker-compose down -v --remove-orphans # Remove possibly previous broken stacks
 docker-compose build
 docker-compose up -d
 docker-compose exec api_app pytest .
+docker-compose down
