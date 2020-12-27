@@ -98,3 +98,4 @@ To-Do:
 - add postman collection
 - refactor linting and formatting
 - add branch with auth/api_key
+- pip install python-dotenv -> for env configs

@@ -136,3 +136,82 @@ def create_user(new_user: schemas.UserBase):
     fake_users.append(new_user)
 
     return new_user
+
+
+@router.put(
+    "/{id}",
+    response_model=schemas.UserInDBBase,
+    status_code=status.HTTP_200_OK,
+        responses={
+        404: {"model": schemas.ResponseMessage, "description": "User not found"},
+        200: {
+            "description": "User updated",
+            "content": {
+                "application/json": {
+                    "example": {
+                        "is_active": True,
+                        "is_superuser": True,
+                        "full_name": "Max Mustermann",
+                        "id": "1234",
+                    }
+                }
+            },
+        },
+    },
+)
+async def update_user(id: str, user: schemas.UserBase):
+    """
+    Update user by ID.
+    """
+    user_update = schemas.UserInDBBase(
+        is_active=user.is_active,
+        is_superuser=user.is_superuser,
+        full_name=user.full_name,
+        id=id
+    )
+
+    find_user = [user for user in fake_users if user.id == id][0]
+
+    if not find_user:
+        return JSONResponse(status_code=404, content={"details": "User not found"})
+    else:
+        fake_users[:] = [user_update for user in fake_users if user.id == id]
+        return user_update
+
+
+
+
+
+@router.delete(
+    "/{id}",
+    response_model=schemas.UserInDBBase,
+    status_code=status.HTTP_200_OK,
+        responses={
+        404: {"model": schemas.ResponseMessage, "description": "User not found"},
+        200: {
+            "description": "User deleted",
+            "content": {
+                "application/json": {
+                    "example": {
+                        "is_active": True,
+                        "is_superuser": True,
+                        "full_name": "Max Mustermann",
+                        "id": "1234",
+                    }
+                }
+            },
+        },
+    },
+)
+async def delete_user(id: str):
+    """
+    Delete user by ID.
+    """
+
+    user_to_delete = [user for user in fake_users if user.id == id][0]
+
+    if not user_to_delete:
+        return JSONResponse(status_code=404, content={"details": "User not found"})
+    else:
+        fake_users.remove(user_to_delete)
+        return user_to_delete
