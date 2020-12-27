@@ -118,7 +118,7 @@ cd /src/scripts
 ## To-Do List:
 
 - [x] add poetry for deps management (dev deps and prod deps)
-- [ ] add postman collection
+- [x] add postman collection
 - [ ] refactoring linting and formatting
 - [ ] add branch with auth/api_key
 - [ ] add branch for deploy/kubernetes
