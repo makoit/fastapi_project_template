@@ -13,7 +13,7 @@ Optional folders can be deleted if not required.
       - api_v1 (includes the version 1 of the api)
     - core (This module includes core functionalities for the app)
     - db [optional] (This module includes database access)
-    - models (This module includes the internal api data models e.g. database data models for sql or no-sql databases)
+    - models [optional] (This module includes the internal api data models e.g. database data models for sql or no-sql databases)
     - schemas (This module includes pydantic schemas to define the properties and types to validate some payload)
     - tests
       - api (includes the api endpoint tests)
@@ -22,6 +22,31 @@ Optional folders can be deleted if not required.
       - utils (includes tests for utils)
     - utils (This module include util functionality.)
   - scripts (includes useful shell scripts)
+
+├───scripts
+└───src
+├───app
+│ ├───api
+│ │ └───v1
+│ │ └───endpoints
+│ ├───core
+│ ├───db
+│ │ ├───crud
+│ │ └───init
+│ ├───models
+│ ├───schemas
+│ ├───tests
+│ │ ├───.pytest_cache
+│ │ │ └───v
+│ │ │ └───cache
+│ │ ├───api
+│ │ │ └───v1
+│ │ ├───db
+│ │ ├───postman
+│ │ └───utils
+│ └───utils
+├───htmlcov
+└───scripts
 
 ## app config
 
