@@ -2,11 +2,13 @@ from fastapi.testclient import TestClient
 
 from app.api.v1.endpoints.users_example import fake_users
 from app.core.config import settings
+from app.tests.utils.headers import create_header
 
 
 def test_read_all_users(client: TestClient) -> None:
 
-    r = client.get(f"{settings.API_V1_STR}/users/")
+   
+    r = client.get(f"{settings.API_V1_STR}/users/", headers=create_header())
     assert 200 <= r.status_code < 300
     api_users = r.json()
     assert api_users == fake_users
@@ -14,9 +16,10 @@ def test_read_all_users(client: TestClient) -> None:
 
 def test_read_user_by_id(client: TestClient) -> None:
 
+   
     user = fake_users[0]
     user_id = user.id
-    r = client.get(f"{settings.API_V1_STR}/users/{user_id}")
+    r = client.get(f"{settings.API_V1_STR}/users/{user_id}", headers=create_header())
     assert 200 <= r.status_code < 300
     api_user = r.json()
     existing_user = fake_users[0]
@@ -26,9 +29,10 @@ def test_read_user_by_id(client: TestClient) -> None:
 
 def test_create_new_user(client: TestClient) -> None:
 
+
     user = {"is_active": True, "is_superuser": True, "full_name": "Max Musterfrau"}
 
-    r = client.post(f"{settings.API_V1_STR}/users/", json=user)
+    r = client.post(f"{settings.API_V1_STR}/users/", json=user, headers=create_header())
     assert 200 <= r.status_code < 300
     new_user = r.json()
     assert "id" in new_user
