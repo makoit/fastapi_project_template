@@ -2,6 +2,12 @@
 
 Base template for fastapi projects. Templates includes example endpoints, schemas & unit tests.
 
+**Info:**
+
+There are extended project templates based on main branch available.
+
+- `security-api-key`: extends base template with api-key security and basic auth for api docs
+
 ## Features
 
 - Python FastAPI REST API
