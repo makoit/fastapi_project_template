@@ -76,7 +76,8 @@ scripts/test.sh
 
 ## Api documentation
 
-- Swagger documentation find in local dev env at: http://localhost:8000/docs
+- Swagger documentation find in local dev env at: http://localhost:8000/api/v1/docs
+- OpenApi.json documentation find in local dev env at: http://localhost:8000/api/v1/openapi.json
 
 ---
 
@@ -133,5 +134,5 @@ cd /src/scripts
 
 - [x] add poetry for deps management (dev deps and prod deps)
 - [x] add postman collection
-- [ ] add branch with auth/api_key
+- [x] add branch with auth/api_key
 - [ ] add branch for deploy/kubernetes
