@@ -1,13 +1,28 @@
 {
 	"info": {
-		"_postman_id": "97533863-2cc1-426b-a121-96ee2b3f52ea",
-		"name": "fastapi_project_template",
+		"_postman_id": "e22788e8-2a03-4d7b-b8fa-dfc8f84cf5a0",
+		"name": "fastapi_project_template_secure",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "read all users",
 			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "cb9b0a3216499502c21ad6e0083da48d19dd3985ca369e9a978ab87bbdf857ca",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -30,6 +45,21 @@
 		{
 			"name": "read a user by id",
 			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "cb9b0a3216499502c21ad6e0083da48d19dd3985ca369e9a978ab87bbdf857ca",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -52,6 +82,21 @@
 		{
 			"name": "create new user",
 			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "cb9b0a3216499502c21ad6e0083da48d19dd3985ca369e9a978ab87bbdf857ca",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -83,6 +128,21 @@
 		{
 			"name": "update a user by id",
 			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "cb9b0a3216499502c21ad6e0083da48d19dd3985ca369e9a978ab87bbdf857ca",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
@@ -114,6 +174,21 @@
 		{
 			"name": "delete a user by id",
 			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "cb9b0a3216499502c21ad6e0083da48d19dd3985ca369e9a978ab87bbdf857ca",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
 				"method": "DELETE",
 				"header": [],
 				"url": {

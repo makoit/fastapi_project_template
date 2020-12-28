@@ -76,7 +76,8 @@ scripts/test.sh
 
 ## Api documentation
 
-- Swagger documentation find in local dev env at: http://localhost:8000/docs
+- Swagger documentation find in local dev env at: http://localhost:8000/api/v1/docs
+- OpenApi.json documentation find in local dev env at: http://localhost:8000/api/v1/openapi.json
 
 ---
 
