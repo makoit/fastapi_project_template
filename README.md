@@ -143,10 +143,3 @@ cd /src/scripts
 ```
 
 ---
-
-## To-Do List:
-
-- [x] add poetry for deps management (dev deps and prod deps)
-- [x] add postman collection
-- [ ] add branch with auth/api_key
-- [ ] add branch for deploy/kubernetes
