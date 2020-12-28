@@ -10,6 +10,11 @@ Base template for fastapi projects. Templates includes example endpoints, schema
 - Linting and code formatting
 - Useful shell scripts
 
+**Extension of base template:**
+
+- custom api endpoints are secured with api key (based on api key in header)
+- added a custom api doc and secure them with basic auth
+
 ## Project structure
 
 - optional folders can be deleted if not required
@@ -43,6 +48,15 @@ Base template for fastapi projects. Templates includes example endpoints, schema
 - `.env.example` file shows example for `.env` file
 - modify example file to your needs and change file name to .env
 - `.env` file will not be commited to your repo (do not share credentials in your repo)
+
+**Info:**
+
+In this branch simple api security is included. You can customize the necessary settings in the `.env` file.
+
+- `API_KEY`
+- `API_KEY_NAME`
+- `USERNAME_DOC_ACCESS`
+- `PASSWORD_DOC_ACCESS`
 
 ## Run app local for dev
 
