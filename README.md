@@ -1,8 +1,16 @@
-# fastapi_project_template
+# Fastapi project template
 
 Base template for fastapi projects. Templates includes example endpoints, schemas & unit tests.
 
-## project structure
+## Features
+
+- Python FastAPI REST API
+- Local dev-deployment via docker
+- Dependency management with [poetry](https://python-poetry.org/)
+- Linting and code formatting
+- Useful shell scripts
+
+## Project structure
 
 - optional folders can be deleted if not required
 - in the main folder can be found config example & docker-compose file for local dev deployment
@@ -30,26 +38,27 @@ Base template for fastapi projects. Templates includes example endpoints, schema
     └───scripts (useful shell scripts)
 ```
 
-## app config
+## App config
 
 - `.env.example` file shows example for `.env` file
 - modify example file to your needs and change file name to .env
-- `.env` file will not be commited to your repo
+- `.env` file will not be commited to your repo (do not share credentials in your repo)
 
-## run app local for dev
+## Run app local for dev
 
-Deployment is actually based on docker-compose for local dev. Execute the commands on the same folder level where the docker-compose file is located.
-App runs in docker container with [uvicorn](https://www.uvicorn.org/). Uvicorn is a lightning-fast ASGI server implementation, using uvloop and httptools.
+Deployment is actually based on `docker-compose` for local dev. Execute the commands on the same folder level where the `docker-compose.yml` file is located. App runs in docker container with [uvicorn](https://www.uvicorn.org/). Uvicorn is a lightning-fast ASGI server implementation, using uvloop and httptools.
 
-Note: This is only for local dev mode. In docker-compose file the source code folder is mounted to the docker container and the uvicorn folder is set on reload if file changes in the source code folder occur. So after code changes you don't have to rebuild the complete container which is really helpful for dev purpose.
+**Note:** This is only for local dev mode. In docker-compose file the source code folder is mounted to the docker container and the uvicorn folder is set on reload if file changes in the source code folder occur. So after code changes you don't have to rebuild the complete container which is really helpful for dev purpose.
 
-### build docker image:
+**Note:** In the source folder you can find two docker files. `Dockerfile` uses `poetry` and the `pyproject.toml` file for dependency management (this dockerfile will be used as default file). `Dockerfile.pip` uses `pip` and the `requirements.txt` file for dependency management. If you want to change this you have to specify the required docker file in the `docker-compose.yml` file in the main root folder of the project.
+
+### Build docker image:
 
 ```sh
 scripts/build.sh
 ```
 
-### run app in container
+### Run app in container
 
 ```sh
 scripts/run.sh
@@ -61,19 +70,21 @@ scripts/run.sh
 scripts/test.sh
 ```
 
-info: html based test coverage report will be saved after run in `src/app/htmlcov`
+**Info:** Html based test coverage report will be saved after run in `src/app/htmlcov`.
 
 ---
 
-## api documentation
+## Api documentation
 
-- swagger documentation find in local dev env at: http://localhost:8000/docs
+- Swagger documentation find in local dev env at: http://localhost:8000/docs
 
 ---
 
-## lint code - static analysis of source code
+## Lint code
 
-for code linting following deps are required:
+Static analysis of source code.
+
+For code linting following deps are required:
 
 - [mypy](https://mypy.readthedocs.io/en/stable/introduction.html) (static type checking)
 - [flake8](https://pypi.org/project/flake8/) (verifies pep8)
@@ -96,9 +107,9 @@ lint your code
 
 ---
 
-## format code
+## Format code
 
-for code formatting following deps are required:
+For code formatting following deps are required:
 
 - [autoflake](https://pypi.org/project/autoflake/) (removes unused imports and unused variables from Python code)
 - [black](https://pypi.org/project/black/) (code formatter)
